@@ -16,7 +16,9 @@ GRANT create session TO invitado;	--DAR PERMISOS DE OBJETO
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO invitado;
 
 ------------CREACION DEL ADMIN
-CREATE USER J_PROY_ADMIN IDENTIFIED BY afjvadminpass
+Prompt Creando un nuevo usuario administrador
+Prompt Proporcione usuario y password
+CREATE USER &&J_PROY_ADMIN IDENTIFIED BY &&afjvadminpass
 DEFAULT TABLESPACE users TEMPORARY TABLESPACE temp
 QUOTA unlimited ON users
 ACCOUNT UNLOCK;
@@ -24,8 +26,9 @@ ACCOUNT UNLOCK;
 GRANT admi TO J_PROY_ADMIN; --se asigna el rol de administrador al usuario
 SET ROLE admi IDENTIFIED BY admipass;
 -----------------creacion del usuario invitado
-
-CREATE USER R_PROY_INVITADO IDENTIFIED BY orcinvitadopass
+Prompt Creando un nuevo usuario invitado
+Prompt Proporcione usuario y password
+CREATE USER &&R_PROY_INVITADO IDENTIFIED BY &&orcinvitadopass
 DEFAULT TABLESPACE users
 QUOTA 0M ON users
 ACCOUNT UNLOCK;
